@@ -1,0 +1,16 @@
+{
+   "name": "My Oi Powered",
+    "version":"0.1",
+    "manifest_version":2,
+   "description": "Modifica minha.oi adicionando uma melhor visualização do seu uso de internet.",
+   "browser_action":{
+      "default_icon": "my_oi.png"
+   },
+   "content_scripts": [
+    {
+      "matches": ["https://minha.oi.com.br/portal/site/MinhaOi/home"],
+      "css": ["my_oi.css"],
+      "js": ["jquery-3.1.1.min.js","my_oi.js"]
+    }
+  ]
+}
