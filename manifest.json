@@ -4,8 +4,11 @@
     "manifest_version":2,
    "description": "Modifica minha.oi adicionando uma melhor visualização do seu uso de internet.",
    "browser_action":{
-      "default_icon": "my_oi.png"
+      "default_icon": "icon16.png"
    },
+   "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
    "content_scripts": [
     {
       "matches": ["https://minha.oi.com.br/portal/site/MinhaOi/home"],
