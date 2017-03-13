@@ -18,7 +18,14 @@ $(document).ready(function(){
 
 	var diffInitialToToday = Math.round(Math.abs((initialDate.getTime() - new Date().getTime())/(oneDay)));
 
-	var gb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().substring(69, 73);
+	var isMb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().indexOf('MB');
+	
+	var gb;
+	if(isMb) {
+		gb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().substring(69, 73);
+	} else {
+		gb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().substring(69, 73);
+	}
 
 	var mbRest = gb * 1000;
 
