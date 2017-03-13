@@ -20,14 +20,16 @@ $(document).ready(function(){
 
 	var isMb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().indexOf('MB');
 	
-	var gb;
-	if(isMb) {
-		gb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().substring(69, 73);
-	} else {
-		gb = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().substring(69, 73);
-	}
+	var literalMeasurement =  $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().trim();
+	var endOfMeasurement = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)').html().trim().indexOf('&');
+	var measurement = literalMeasurement.substring(0, endOfMeasurement);
 
-	var mbRest = gb * 1000;
+	var mbRest;
+	if(isMb) {
+		mbRest = measurement;
+	} else {
+		mbRest = measurement * 1000;
+	}
 
 	var actualUsed = 2000 - mbRest;
 
