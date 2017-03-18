@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	waitForElement('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(3)');
+
 	var date = $('#boxBonus > div > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(3)').html().substring(13, 23);
 
 	var dateInParts = date.split('/');
@@ -31,9 +33,9 @@ $(document).ready(function(){
 		mbRest = measurement * 1000;
 	}
 
-	var actualUsed = 2000 - mbRest;
-
-	var totalPlan = 2000;
+	var totalPlan = $('#boxPromocao > div > div > div > div:nth-child(3) > table > tbody > tr:nth-child(2) > td').html().trim().substring(258, 259) * 1000;
+	
+	var actualUsed = totalPlan - mbRest;
 
 	var utopiaPerDay = totalPlan / diffDays;
 
@@ -53,3 +55,10 @@ $(document).ready(function(){
 	$('#boxBonus .table-responsive:last tr:last').after('<tr><td colspan="3"><div class="title">Atual: usado = '+actualUsed +'Mb</div><div class="meter '+ color +'"><span style="width: '+actualPercent+'%"></span></div></td></tr>');
 });
 
+function waitForElement(elementPath){
+	window.setTimeout(function(){
+		if(typeof $(elementPath) === "undefined" ){
+			waitForElement(elementPath);
+		}
+	}, 100)
+};
