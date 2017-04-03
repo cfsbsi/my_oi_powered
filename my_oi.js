@@ -27,7 +27,7 @@ $(document).ready(function(){
 	var measurement = literalMeasurement.substring(0, endOfMeasurement);
 
 	var mbRest;
-	if(isMb) {
+	if(isMb>0) {
 		mbRest = measurement;
 	} else {
 		mbRest = measurement * 1000;

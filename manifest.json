@@ -1,6 +1,6 @@
 {
    "name": "My Oi Powered",
-    "version":"0.3",
+    "version":"0.4",
     "manifest_version":2,
    "description": "Modifica minha.oi adicionando uma melhor visualização do seu uso de internet.",
    "browser_action":{
